@@ -24,7 +24,6 @@ def main():
         # 发送数据
         udp_server.sendto(send_data.encode('utf-8'), client_addr)
 
-
     # 关闭套接字
     udp_server.close()
 
