@@ -6,15 +6,13 @@ def main():
     udp_server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     # 绑定端口
-    local_addr = ('', 7788) # ip地址不写表示本机IP
+    local_addr = ('', 7799) # ip地址不写表示本机IP
     udp_server.bind(local_addr)
 
     while True:
         # 接收数据
         print('准备接收数据。。。。')
         recv_data = udp_server.recvfrom(1024) # 1024表示本次接收的最大字节数
-        if not recv_data:
-            break
         # 打印数据
         print(recv_data[0].decode('utf-8'))
         # 客户端的ip和端口
